@@ -1,0 +1,728 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Tech Comp Jaya</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            background: #f5f7fa;
+            color: #172033;
+        }
+
+        /* NAVBAR */
+        header {
+            background: white;
+            padding: 18px 7%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid #ddd;
+        }
+
+        .logo {
+            font-size: 22px;
+            font-weight: bold;
+            color: #2563eb;
+        }
+
+        .logo span {
+            color: #111827;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: #333;
+            margin-left: 25px;
+            font-size: 14px;
+        }
+
+        nav a:hover {
+            color: #2563eb;
+        }
+
+        .wa {
+            background: #2563eb;
+            color: white;
+            padding: 10px 18px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-size: 14px;
+        }
+
+        /* HERO */
+        .hero {
+            min-height: 550px;
+            padding: 70px 7%;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 40px;
+            background: linear-gradient(135deg, #ffffff, #eaf2ff);
+        }
+
+        .hero-text {
+            max-width: 600px;
+        }
+
+        .hero-text small {
+            color: #2563eb;
+            font-weight: bold;
+            letter-spacing: 2px;
+        }
+
+        .hero-text h1 {
+            font-size: 55px;
+            line-height: 1.05;
+            margin: 15px 0;
+        }
+
+        .hero-text h1 span {
+            color: #2563eb;
+        }
+
+        .hero-text p {
+            color: #64748b;
+            font-size: 17px;
+            margin-bottom: 25px;
+        }
+
+        .button {
+            display: inline-block;
+            background: #2563eb;
+            color: white;
+            text-decoration: none;
+            padding: 13px 22px;
+            border-radius: 9px;
+            font-weight: bold;
+            margin-right: 8px;
+        }
+
+        .button-outline {
+            display: inline-block;
+            background: white;
+            color: #172033;
+            text-decoration: none;
+            padding: 13px 22px;
+            border-radius: 9px;
+            border: 1px solid #ddd;
+            font-weight: bold;
+        }
+
+        /* HERO GAMBAR */
+        .hero-image {
+            width: 430px;
+            height: 350px;
+            border-radius: 25px;
+            background: linear-gradient(145deg, #0f172a, #2563eb);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 45px;
+            font-weight: bold;
+            box-shadow: 0 20px 50px rgba(0,0,0,0.15);
+        }
+
+        /* SECTION */
+        section {
+            padding: 80px 7%;
+        }
+
+        .title {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .title small {
+            color: #2563eb;
+            font-weight: bold;
+            letter-spacing: 2px;
+        }
+
+        .title h2 {
+            font-size: 34px;
+            margin-top: 8px;
+        }
+
+        .title p {
+            color: #64748b;
+            margin-top: 8px;
+        }
+
+        /* KATEGORI */
+        .categories {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 18px;
+        }
+
+        .category {
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            border: 1px solid #e5e7eb;
+            transition: 0.2s;
+        }
+
+        .category:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 35px rgba(0,0,0,0.08);
+        }
+
+        .category .icon {
+            font-size: 35px;
+            margin-bottom: 12px;
+        }
+
+        .category h3 {
+            margin-bottom: 5px;
+        }
+
+        .category p {
+            color: #64748b;
+            font-size: 14px;
+        }
+
+        /* PC */
+        .pc-section {
+            background: #eef4ff;
+        }
+
+        .pc-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+
+        .pc-card {
+            padding: 40px;
+            border-radius: 20px;
+            color: white;
+            min-height: 280px;
+        }
+
+        .office {
+            background: linear-gradient(135deg, #2563eb, #172554);
+        }
+
+        .gaming {
+            background: linear-gradient(135deg, #111827, #374151);
+        }
+
+        .pc-card small {
+            font-weight: bold;
+        }
+
+        .pc-card h2 {
+            font-size: 38px;
+            margin: 15px 0;
+        }
+
+        .pc-card p {
+            color: #dbeafe;
+            max-width: 450px;
+        }
+
+        /* PRODUK */
+        .products {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 18px;
+        }
+
+        .product {
+            background: white;
+            border: 1px solid #e5e7eb;
+            border-radius: 15px;
+            overflow: hidden;
+        }
+
+        .product-image {
+            height: 170px;
+            background: #eaf2ff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #2563eb;
+            font-size: 32px;
+            font-weight: bold;
+        }
+
+        .product-info {
+            padding: 18px;
+        }
+
+        .product-info p {
+            color: #64748b;
+            font-size: 13px;
+            margin-top: 5px;
+        }
+
+        /* KONTAK */
+        .contact {
+            margin: 0 7% 70px;
+            padding: 45px;
+            border-radius: 20px;
+            background: #111827;
+            color: white;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 30px;
+        }
+
+        .contact h2 {
+            font-size: 30px;
+            margin-bottom: 8px;
+        }
+
+        .contact p {
+            color: #cbd5e1;
+        }
+
+        /* FOOTER */
+        footer {
+            background: white;
+            border-top: 1px solid #ddd;
+            padding: 30px 7%;
+            display: flex;
+            justify-content: space-between;
+            color: #64748b;
+            font-size: 13px;
+        }
+
+        /* HP */
+        @media (max-width: 800px) {
+
+            nav {
+                display: none;
+            }
+
+            .hero {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .hero-image {
+                width: 100%;
+                max-width: 430px;
+            }
+
+            .categories {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            .products {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            .pc-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .contact {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+        }
+
+        @media (max-width: 500px) {
+
+            .hero-text h1 {
+                font-size: 40px;
+            }
+
+            .categories,
+            .products {
+                grid-template-columns: 1fr;
+            }
+
+            footer {
+                flex-direction: column;
+                gap: 10px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<!-- HEADER -->
+<header>
+
+    <div class="logo">
+        <span>TECH</span> COMP JAYA
+    </div>
+
+    <nav>
+        <a href="#home">Home</a>
+        <a href="#kategori">Produk</a>
+        <a href="#pc">PC Rakitan</a>
+        <a href="#layanan">Layanan</a>
+        <a href="#kontak">Kontak</a>
+    </nav>
+
+    <a class="wa" href="#kontak">
+        WhatsApp
+    </a>
+
+</header>
+
+
+<!-- HERO -->
+<div class="hero" id="home">
+
+    <div class="hero-text">
+
+        <small>TECH COMP JAYA</small>
+
+        <h1>
+            Solusi Kebutuhan
+            <span>Komputer Anda.</span>
+        </h1>
+
+        <p>
+            Laptop • PC Rakitan • Sparepart • Aksesoris • CCTV
+        </p>
+
+        <a class="button" href="#kategori">
+            Lihat Produk
+        </a>
+
+        <a class="button-outline" href="#kontak">
+            Hubungi Kami
+        </a>
+
+    </div>
+
+    <div class="hero-image">
+        TECH<br>COMP
+    </div>
+
+</div>
+
+
+<!-- KATEGORI -->
+<section id="kategori">
+
+    <div class="title">
+
+        <small>KATEGORI</small>
+
+        <h2>
+            Pilih Sesuai Kebutuhan
+        </h2>
+
+        <p>
+            Berbagai kebutuhan komputer dan perangkat pendukung.
+        </p>
+
+    </div>
+
+
+    <div class="categories">
+
+        <div class="category">
+            <div class="icon">🖥️</div>
+            <h3>PC & Rakitan</h3>
+            <p>PC Office, Gaming dan Custom.</p>
+        </div>
+
+        <div class="category">
+            <div class="icon">💻</div>
+            <h3>Laptop</h3>
+            <p>Laptop second dan siap pakai.</p>
+        </div>
+
+        <div class="category">
+            <div class="icon">⚙️</div>
+            <h3>Sparepart</h3>
+            <p>RAM, SSD, VGA, Motherboard dan lainnya.</p>
+        </div>
+
+        <div class="category">
+            <div class="icon">📹</div>
+            <h3>CCTV</h3>
+            <p>Kamera dan perlengkapan CCTV.</p>
+        </div>
+
+        <div class="category">
+            <div class="icon">🎮</div>
+            <h3>Gaming</h3>
+            <p>Mouse, Keyboard, Headset dan lainnya.</p>
+        </div>
+
+        <div class="category">
+            <div class="icon">🌐</div>
+            <h3>Networking</h3>
+            <p>Kabel LAN, Switch dan perangkat jaringan.</p>
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- PC RAKITAN -->
+<section class="pc-section" id="pc">
+
+    <div class="title">
+
+        <small>PC RAKITAN</small>
+
+        <h2>
+            Paket PC Office & Gaming
+        </h2>
+
+        <p>
+            Bisa disesuaikan dengan kebutuhan dan budget.
+        </p>
+
+    </div>
+
+
+    <div class="pc-grid">
+
+        <div class="pc-card office">
+
+            <small>UNTUK KERJA & SEKOLAH</small>
+
+            <h2>
+                PC OFFICE
+            </h2>
+
+            <p>
+                Cocok untuk pekerjaan, sekolah,
+                administrasi dan kebutuhan harian.
+            </p>
+
+        </div>
+
+
+        <div class="pc-card gaming">
+
+            <small>UNTUK GAMING & HIBURAN</small>
+
+            <h2>
+                PC GAMING
+            </h2>
+
+            <p>
+                Rakit sesuai kebutuhan game
+                dan budget yang kamu inginkan.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- PRODUK -->
+<section>
+
+    <div class="title">
+
+        <small>PRODUK PILIHAN</small>
+
+        <h2>
+            Produk Tech Comp Jaya
+        </h2>
+
+        <p>
+            Beberapa produk yang bisa kamu cari di toko kami.
+        </p>
+
+    </div>
+
+
+    <div class="products">
+
+        <div class="product">
+
+            <div class="product-image">
+                SSD
+            </div>
+
+            <div class="product-info">
+
+                <h3>
+                    SSD SATA / NVMe
+                </h3>
+
+                <p>
+                    Upgrade penyimpanan PC dan laptop.
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <div class="product">
+
+            <div class="product-image">
+                RAM
+            </div>
+
+            <div class="product-info">
+
+                <h3>
+                    RAM PC & Laptop
+                </h3>
+
+                <p>
+                    Berbagai kapasitas untuk kebutuhanmu.
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <div class="product">
+
+            <div class="product-image">
+                VGA
+            </div>
+
+            <div class="product-info">
+
+                <h3>
+                    VGA / Graphic Card
+                </h3>
+
+                <p>
+                    Untuk gaming, desain dan multimedia.
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <div class="product">
+
+            <div class="product-image">
+                CCTV
+            </div>
+
+            <div class="product-info">
+
+                <h3>
+                    CCTV
+                </h3>
+
+                <p>
+                    Kamera keamanan untuk rumah dan usaha.
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- LAYANAN -->
+<section id="layanan">
+
+    <div class="title">
+
+        <small>KENAPA TECH COMP JAYA?</small>
+
+        <h2>
+            Belanja Lebih Gampang
+        </h2>
+
+    </div>
+
+
+    <div class="categories">
+
+        <div class="category">
+            <h3>✓ Produk Beragam</h3>
+            <p>
+                Komputer, laptop, sparepart,
+                CCTV dan aksesoris.
+            </p>
+        </div>
+
+        <div class="category">
+            <h3>✓ Bisa Konsultasi</h3>
+            <p>
+                Bingung memilih spesifikasi?
+                Kami bantu.
+            </p>
+        </div>
+
+        <div class="category">
+            <h3>✓ Produk Bergaransi</h3>
+            <p>
+                Tersedia pilihan produk
+                dengan garansi.
+            </p>
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- KONTAK -->
+<div class="contact" id="kontak">
+
+    <div>
+
+        <h2>
+            Butuh perangkat komputer?
+        </h2>
+
+        <p>
+            Hubungi Tech Comp Jaya untuk cek stok
+            dan konsultasi kebutuhanmu.
+        </p>
+
+    </div>
+
+    <a class="button" href="https://wa.me/6281281230290">
+        Chat WhatsApp
+    </a>
+
+</div>
+
+
+<!-- FOOTER -->
+<footer>
+
+    <div>
+        <strong>
+            TECH COMP JAYA
+        </strong>
+
+        <br>
+
+        Solusi kebutuhan komputer Anda.
+    </div>
+
+    <div>
+        © 2026 Tech Comp Jaya
+    </div>
+
+</footer>
+
+</body>
+</html>
